@@ -1,0 +1,5 @@
+= puppet-jstatd module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-jstatd/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-jstatd/]
+
+This is the jstatd module.
