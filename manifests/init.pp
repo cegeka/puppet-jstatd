@@ -12,5 +12,22 @@
 #
 class jstatd {
 
+  file { '/etc/jstatd.policy':
+    ensure => present,
+    source => 'puppet:///modules/jstatd/jstatd.policy',
+  }
+
+  file { '/etc/init.d/jstatd':
+    ensure  => present,
+    mode    => '0755',
+    source  => 'puppet:///modules/jstatd/jstatd',
+    require => File['/etc/jstatd.policy'],
+  }
+
+  service { 'jstatd':
+    ensure  => running,
+    enable  => true,
+    require => File['/etc/init.d/jstatd'],
+  }
 
 }
