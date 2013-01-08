@@ -25,9 +25,10 @@ class jstatd {
   }
 
   service { 'jstatd':
-    ensure  => running,
-    enable  => true,
-    require => File['/etc/init.d/jstatd'],
+    ensure    => running,
+    enable    => true,
+    hasstatus => true,
+    require   => File['/etc/init.d/jstatd']
   }
 
 }
