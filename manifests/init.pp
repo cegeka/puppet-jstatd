@@ -28,7 +28,8 @@ class jstatd {
     ensure    => running,
     enable    => true,
     hasstatus => true,
-    require   => File['/etc/init.d/jstatd']
+    require   => File['/etc/init.d/jstatd'],
+    subscribe => File['/etc/jstatd.policy']
   }
 
 }
